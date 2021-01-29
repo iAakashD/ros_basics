@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <!-- Reference: http://wiki.ros.org/catkin/package.xml -->
+  <name>pkg_roscpp</name>
+  <version>0.0.0</version>
+  <description>The pkg_roscpp package</description>
+  <maintainer email="dammala.aakash@gmail.com">melodic</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <!--  depend is combination of 3 build_depend, build_export_depend and exec_depend  -->
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  
+</package>
