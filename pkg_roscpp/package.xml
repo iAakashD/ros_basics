@@ -11,5 +11,7 @@
   <!--  depend is combination of 3 build_depend, build_export_depend and exec_depend  -->
   <depend>roscpp</depend>
   <depend>std_msgs</depend>
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
   
 </package>
