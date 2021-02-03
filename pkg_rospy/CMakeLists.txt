@@ -11,6 +11,10 @@ add_message_files(FILES
   simple_msg.msg
 )
 
+add_service_files(FILES
+  simple_srv.srv
+)
+
 generate_messages(DEPENDENCIES
   std_msgs
 )
@@ -22,4 +26,15 @@ catkin_package(CATKIN_DEPENDS
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
+)
+
+catkin_install_python(PROGRAMS
+  scripts/publisher.py
+  scripts/subscriber.py
+  scripts/publisher_msg.py
+  scripts/subscriber_msg.py
+  scripts/client.py
+  scripts/server.py
+  
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
