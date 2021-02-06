@@ -1,0 +1,9 @@
+#goal
+int32 count_upto
+float32 wait_time
+---
+#result
+int32 final_count
+---
+#feedback
+int32 current_count
