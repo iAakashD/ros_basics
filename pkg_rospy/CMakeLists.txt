@@ -42,6 +42,8 @@ catkin_install_python(PROGRAMS
   scripts/subscriber_msg.py
   scripts/simple_action_client.py
   scripts/simple_action_server.py
+  scripts/simple_action_client_all.py
+  scripts/simple_action_server_all.py
   
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
