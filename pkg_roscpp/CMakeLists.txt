@@ -5,6 +5,11 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
   message_generation
+  actionlib
+  actionlib_msgs
+)
+find_package(Boost REQUIRED COMPONENTS 
+  system
 )
 
 add_message_files(FILES
@@ -15,17 +20,24 @@ add_service_files(FILES
   simple_srv.srv
 )
 
+add_action_files(FILES
+  CountNumbers.action
+)
+
 generate_messages(DEPENDENCIES
   std_msgs
+  actionlib_msgs
 )
 
 catkin_package(CATKIN_DEPENDS
   std_msgs
   message_runtime
+  actionlib_msgs
 )
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIRS}
 )
 
 add_executable(publisher src/publisher.cpp)
@@ -50,3 +62,11 @@ target_link_libraries(client ${catkin_LIBRARIES})
 add_executable(server src/server.cpp)
 add_dependencies(server pkg_roscpp_generate_messages_cpp)
 target_link_libraries(server ${catkin_LIBRARIES})
+
+add_executable(simple_action_server src/simple_action_server.cpp)
+add_dependencies(simple_action_server pkg_roscpp_generate_messages_cpp)
+target_link_libraries(simple_action_server ${catkin_LIBRARIES})
+
+add_executable(simple_action_client src/simple_action_client.cpp)
+add_dependencies(simple_action_client pkg_roscpp_generate_messages_cpp)
+target_link_libraries(simple_action_client ${catkin_LIBRARIES})
