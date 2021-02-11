@@ -70,3 +70,11 @@ target_link_libraries(simple_action_server ${catkin_LIBRARIES})
 add_executable(simple_action_client src/simple_action_client.cpp)
 add_dependencies(simple_action_client pkg_roscpp_generate_messages_cpp)
 target_link_libraries(simple_action_client ${catkin_LIBRARIES})
+
+add_executable(simple_action_server_all src/simple_action_server_all.cpp)
+add_dependencies(simple_action_server_all pkg_roscpp_generate_messages_cpp)
+target_link_libraries(simple_action_server_all ${catkin_LIBRARIES})
+
+add_executable(simple_action_client_all src/simple_action_client_all.cpp)
+add_dependencies(simple_action_client_all pkg_roscpp_generate_messages_cpp)
+target_link_libraries(simple_action_client_all ${catkin_LIBRARIES})
