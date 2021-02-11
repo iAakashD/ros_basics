@@ -7,14 +7,11 @@ protected:
     ros::NodeHandle nh_;
     actionlib::SimpleActionServer<pkg_roscpp::CountNumbersAction> as_;
 
-    std::string action_name_;
-    pkg_roscpp::CountNumbersFeedback feedback_;
     pkg_roscpp::CountNumbersResult result_;    
 
 public:
     ActionServer(std::string name) : 
-        as_(nh_, name, boost::bind(&ActionServer::executeCB, this, _1), false), 
-        action_name_(name)
+        as_(nh_, name, boost::bind(&ActionServer::executeCB, this, _1), false)
     {
         as_.start();
         ROS_INFO("Action Server started");

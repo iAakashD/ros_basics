@@ -17,7 +17,7 @@ public:
 
     ~ActionClient(void){}
 
-    void send_goal_get_result(){
+    void send_goal(){
         ROS_INFO("connected to server");
         pkg_roscpp::CountNumbersGoal goal;
         goal.count_upto = 10;
@@ -38,7 +38,7 @@ public:
 int main(int argc, char **argv){
     ros::init(argc, argv, "simple_action_client");
     ActionClient Client;
-    Client.send_goal_get_result();
+    Client.send_goal();
     ros::spin();
     return 0;
 }
