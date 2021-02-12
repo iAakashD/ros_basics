@@ -34,7 +34,7 @@ public:
     void done_CB(const actionlib::SimpleClientGoalState &state, 
             const pkg_roscpp::CountNumbersResultConstPtr &result)
     {
-        //ROS_INFO("Finished in state: %s", (state).toString.c_str());
+        ROS_INFO("Finished in state: %s", state.toString().c_str());
         ROS_INFO("Result: [%d]", (int)result->final_count);
     }
 
@@ -48,7 +48,7 @@ public:
 };
 
 int main(int argc, char **argv){
-    ros::init(argc, argv, "simple_action_server");
+    ros::init(argc, argv, "simple_action_client_all");
     ActionClient Client;
     Client.send_goal();
 

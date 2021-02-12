@@ -30,7 +30,7 @@ public:
     void done_CB(const actionlib::SimpleClientGoalState &state, 
             const pkg_roscpp::CountNumbersResultConstPtr &result)
     {
-        //ROS_INFO("Finished in state: %s", (state).toString.c_str());
+        ROS_INFO("Finished in state: %s", state.toString().c_str());
         ROS_INFO("Result: [%d]", (int)result->final_count);
     }
 };

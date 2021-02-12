@@ -66,7 +66,7 @@ public:
 };
 
 int main(int argc, char **argv){
-    ros::init(argc, argv, "simple_action_server");
+    ros::init(argc, argv, "simple_action_server_all");
     ActionServer Server("count_numbers");
 
     ros::spin();
