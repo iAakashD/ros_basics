@@ -1,0 +1,4 @@
+<launch>
+    <node name="publisher" type="publisher" pkg="pkg_roscpp" output="screen"/>
+    <node name="subscriber" type="subscriber" pkg="pkg_roscpp" output="screen"/>
+</launch>

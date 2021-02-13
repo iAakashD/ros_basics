@@ -1,0 +1,4 @@
+<launch>
+    <node name="server" type="server" pkg="pkg_roscpp" output="screen"/>
+    <node name="client" type="client" args="10 20 30" pkg="pkg_roscpp" output="screen"/>
+</launch>
